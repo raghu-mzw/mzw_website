@@ -263,6 +263,10 @@ const LandingLayout: React.FC<LandingLayoutProps> = ({ children }) => {
       }
     }
 
+    // Reset visitor count to 0
+    localStorage.setItem('visitorCount', '0');
+    setVisitorCount(0);
+
     // Check if this is a new session (no sessionStorage entry)
     const hasVisited = sessionStorage.getItem('hasVisited');
     if (!hasVisited && location.pathname === '/') {
